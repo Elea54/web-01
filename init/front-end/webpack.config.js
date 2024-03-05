@@ -19,6 +19,19 @@ const path = require("path");
       minimize: false,
     },
     module: {
-      rules: [],
+      rules: [
+        {
+          test: /\.(css)$/,
+          use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.(html)$/,
+          use: ["html-loader"],
+        },
+        {
+          test: /\.(png|jpg|gif)$/i,
+          type: 'asset/resource'
+        }
+      ],
     },
   };

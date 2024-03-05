@@ -1,4 +1,18 @@
-// TODO #import-html: use ES default imports to import game.html as template
+import template from "../views/game.html";
+
+import {parseUrl} from "./utils";
+
+import back from "/src/assets/cards/back.png";
+import card0 from "/src/assets/cards/card-0.png";
+import card1 from "/src/assets/cards/card-1.png";
+import card2 from "/src/assets/cards/card-2.png";
+import card3 from "/src/assets/cards/card-3.png";
+import card4 from "/src/assets/cards/card-4.png";
+import card5 from "/src/assets/cards/card-5.png";
+import card6 from "/src/assets/cards/card-6.png";
+import card7 from "/src/assets/cards/card-7.png";
+import card8 from "/src/assets/cards/card-8.png";
+import card9 from "/src/assets/cards/card-9.png";
 
 var CARD_TEMPLATE = ""
   .concat('<main class="card-cmp">')
@@ -8,34 +22,26 @@ var CARD_TEMPLATE = ""
   .concat("  </div>")
   .concat("</main>");
 
-// TODO #export-functions: remove the IIFE
-(function () {
   var environment = {
     api: {
       host: "http://localhost:8081",
     },
   };
 
-  // TODO #export-functions: export function GameComponent
   // TODO #class: use the ES6 class keyword
   // TODO #extends: extend Component
   /* class GameComponent constructor */
-  function GameComponent() {
+  export function GameComponent() {
     // TODO #extends: call super(template)
     // gather parameters from URL
     var params = parseUrl();
 
-    // TODO #import-html: assign template to this.template
-    // save player name & game ize
+    this.template = template;
     this._name = params.name;
     this._size = parseInt(params.size) || 9;
     this._flippedCard = null;
     this._matchedPairs = 0;
   }
-
-  // TODO #export-functions: remove this line
-  // put component in global scope, to be runnable right from the HTML.
-  window.GameComponent = GameComponent;
 
   // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.init */
@@ -214,19 +220,18 @@ var CARD_TEMPLATE = ""
   };
 
   // TODO #card-component: Change images location to /app/components/game/card/assets/***.png
-  // TODO #import-assets: use ES default import to import images.
   var CARDS_IMAGE = [
-    "/src/assets/cards/back.png",
-    "/src/assets/cards/card-0.png",
-    "/src/assets/cards/card-1.png",
-    "/src/assets/cards/card-2.png",
-    "/src/assets/cards/card-3.png",
-    "/src/assets/cards/card-4.png",
-    "/src/assets/cards/card-5.png",
-    "/src/assets/cards/card-6.png",
-    "/src/assets/cards/card-7.png",
-    "/src/assets/cards/card-8.png",
-    "/src/assets/cards/card-9.png",
+    back,
+    card0,
+    card1,
+    card2,
+    card3,
+    card4,
+    card5,
+    card6,
+    card7,
+    card8,
+    card9,
   ];
 
   // TODO #class: use the ES6 class keyword
@@ -279,4 +284,4 @@ var CARD_TEMPLATE = ""
       },
     },
   });
-})();
+
