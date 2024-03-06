@@ -6,7 +6,7 @@ import {Component} from "./component";
       super(template);
     }
     init() {
-      var form = document.querySelector("form.form-signin");
+      let form = document.querySelector("form.form-signin");
 
       form.addEventListener(
           "submit",
@@ -17,10 +17,11 @@ import {Component} from "./component";
               event.stopPropagation();
               form.classList.add("was-validated");
             } else {
-              var name = event.srcElement.querySelector("#nickname").value;
-              var size = parseInt(event.srcElement.querySelector("#size").value);
-
-              this._startGame(name, size);
+              let name = event.srcElement.querySelector("#nickname").value;
+              let size = parseInt(event.srcElement.querySelector("#size").value);
+                let gamePage = "./#game";
+                // TODO #template-literals:  use template literals (backquotes)
+                window.location = gamePage + "?name=" + name + "&size=" + size;
             }
           }.bind(this),
           false
@@ -28,10 +29,5 @@ import {Component} from "./component";
 
       return this;
     }
-      _startGame(name, size) {
-          var gamePage = "./#game";
-          // TODO #template-literals:  use template literals (backquotes)
-          window.location = gamePage + "?name=" + name + "&size=" + size;
-      }
 
   }
