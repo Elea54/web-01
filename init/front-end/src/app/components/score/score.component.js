@@ -1,7 +1,9 @@
-import template from "../views/score.html";
-  /* class ScoreComponent constructor */
-  import {parseUrl} from "./utils";
-import {Component} from "./component";
+import template from "./score.component.html";
+import "./score.component.css";
+/* class ScoreComponent constructor */
+/* class ScoreComponent constructor */
+import {parseUrl} from "../../scripts/utils";
+import {Component} from "../../scripts/component";
 
 export class ScoreComponent extends Component{
     constructor() {
