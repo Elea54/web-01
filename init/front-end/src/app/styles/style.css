@@ -1,7 +1,3 @@
-/*****
- * GLOBAL STYLE
- */
-
 body {
   display: flex;
   flex-flow: column nowrap;
@@ -15,7 +11,3 @@ body {
 body > main {
   overflow: auto;
 }
-
-/* global style */
-
-

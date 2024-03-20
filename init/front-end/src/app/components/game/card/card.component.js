@@ -13,28 +13,22 @@ import card7 from "/src/app/components/game/card/assets/card-7.png";
 import card8 from "/src/app/components/game/card/assets/card-8.png";
 import card9 from "/src/app/components/game/card/assets/card-9.png";
 
+export class CardComponent extends Component {
 
-/* class CardComponent constructor */
-export class CardComponent extends Component{
-
-    // is this card flipped?
     constructor(id) {
         super(template);
         this._flipped = false;
-
-        // has the matching card has been discovered already?
         this.matched = false;
-
         this._elt = document.createElement("div");
         this._elt.innerHTML = this.template;
         this._elt = this._elt.firstElementChild;
         this._id = id;
-
         this._imageElt = this.getElement().querySelector(".card-wrapper");
         this._imageElt.querySelector("img.front-face").src =
             CARDS_IMAGE[this._id + 1];
         this._imageElt.querySelector("img.back-face").src = CARDS_IMAGE[0];
     }
+
     getElement() {
         return this._elt;
     }
@@ -47,14 +41,17 @@ export class CardComponent extends Component{
     equals(card) {
         return card._id === this._id;
     }
-    get flipped(){
+
+    get flipped() {
         return this._flipped;
     }
-    set flipped(_flipped){
+
+    set flipped(_flipped) {
         this._flipped = _flipped;
     }
 
 }
+
 let CARDS_IMAGE = [
     back,
     card0,
