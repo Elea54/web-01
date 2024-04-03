@@ -1,5 +1,5 @@
 import template from "./score.component.html";
-import "./score.component.css";
+import "./score.component.scss";
 import {parseUrl} from "../../scripts/utils";
 import {Component} from "../../scripts/component";
 

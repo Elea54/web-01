@@ -1,5 +1,5 @@
 import template from "./card.component.html";
-import "./card.component.css";
+import "./card.component.scss";
 import {Component} from "../../../scripts/component";
 import back from "/src/app/components/game/card/assets/back.png";
 import card0 from "/src/app/components/game/card/assets/card-0.png";
